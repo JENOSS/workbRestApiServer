@@ -23,9 +23,10 @@ module.exports = function(app,User){
     // LOGIN
     app.post('/api/users/login', function(req,res){
         User.find({userid: req.body.userid, passwd: req.body.passwd}, function(err, users){
+           
             if(err) return res.json({result: 0});
             if(users.length === 0) return res.json({result: 0})
-            res.json({result: 1})
+            res.json({"result" : 1, "userid" : req.body.userid});
         })
     });
 
