@@ -14,9 +14,9 @@ module.exports = function(app,User){
     // GET SINGLE USERS
     app.get('/api/users/:userid', function(req,res){
         User.find({userid: req.params.userid}, function(err, users){
-            if(err) return res.status(500).send({error: 'db error'});
-            if(users.length === 0) return res.status(404).json({error: 'users not found'});
-            res.json(users);
+            if(err) return res.json({result:0});
+            if(users.length === 0) return res.json({result : 0});
+            res.json({result: 1 , "name" : users[0].name, "phone": users[0].phone});
         })
     });
 
