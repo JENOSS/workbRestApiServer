@@ -6,7 +6,7 @@ let userSchema = new Schema({
     passwd: String,
     name: String,
     phone: String,
-    auth: Number, // 고용주 1, 근로자 2
+    auth: {type:Number, default:-1}, // 고용주 0 근로자 1
 });
 
 module.exports = mongoose.model('user',userSchema);

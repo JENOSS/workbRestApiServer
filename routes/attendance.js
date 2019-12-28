@@ -4,7 +4,6 @@ module.exports = function(app,Attendance){
     app.post('/api/attend', function(req,res){
         let attendance = new Attendance();
         attendance.userid = req.body.userid;
-        attendance.name = req.body.name;
         attendance.year = req.body.year;
         attendance.month = req.body.month;
         attendance.day = req.body.day;

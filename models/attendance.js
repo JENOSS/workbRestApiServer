@@ -3,7 +3,6 @@ let Schema = mongoose.Schema;
 
 let attendanceSchema= new Schema({
     userid: String,
-    name: String,
     year: String,
     month: String,
     day: String,

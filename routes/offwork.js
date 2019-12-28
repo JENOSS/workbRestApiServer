@@ -4,7 +4,6 @@ module.exports = function(app,Offwork){
     app.post('/api/offwork', function(req,res){
         let offwork = new Offwork();
         offwork.userid = req.body.userid;
-        offwork.name = req.body.name;
         offwork.year = req.body.year;
         offwork.month = req.body.month;
         offwork.day = req.body.day;
