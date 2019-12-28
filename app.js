@@ -28,13 +28,13 @@ let User = require('./models/user');
 let Attendance = require('./models/attendance');
 let Offwork = require('./models/offwork');
 let Company = require('./models/company');
-
+let Contract = require('./models/contract')
 // [CONFIGURE ROUTER]
 let UserRouter = require('./routes/index')(app,User)
 let AttendaceRouter = require('./routes/attendance')(app,Attendance)
 let OffworkRouter = require('./routes/offwork')(app,Offwork)
 let CommpanyRouter = require('./routes/company')(app,Company)
-let BlockchainRouter = require('./routes/blockchain')(app)
+let BlockchainRouter = require('./routes/blockchain')(app,Contract)
 
 // [RUN SERVER]
 let server = app.listen(port, function() {

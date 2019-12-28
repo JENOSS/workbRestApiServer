@@ -46,7 +46,7 @@ module.exports = function (app,Contract) {
             else {
                 console.log(body);
                 //res.json(body);
-                res.send(body);
+                res.json(body[0]);
                 
             }
         }); 
@@ -75,14 +75,28 @@ module.exports = function (app,Contract) {
                 "year": req.body.year,
                 "month": req.body.month,
                 "day": req.body.day,
+                "stat": "pendding",
                 "wage": req.body.wage,
                 "workday": req.body.workday,
                 "workHour": req.body.workHour,
-                "period": req.body.period,
-                "stat": "complete"
+                "period": req.body.period
+               
             },
             json : true
         }
+        console.log(req.body.company)
+        console.log(req.body.employeeName)
+        console.log(req.body.employerName)
+        console.log(req.body.employeePhoneNumber)
+        console.log(req.body.employerPhoneNumber)
+        console.log(req.body.year)
+        console.log(req.body.month)
+        console.log(req.body.day)
+        console.log(req.body.wage)
+        console.log(req.body.workday)
+        console.log(req.body.workHour)
+        console.log(req.body.period)
+
         request(options, function (error, response, body) {
             if (!error && res.statusCode == 200) {
                 console.log(body)
