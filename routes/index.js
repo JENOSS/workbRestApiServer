@@ -20,6 +20,7 @@ module.exports = function(app,User){
         })
     });
 
+    // LOGIN
     app.post('/api/users/login', function(req,res){
         User.find({userid: req.body.userid, passwd: req.body.passwd}, function(err, users){
             if(err) return res.json({result: 0});
@@ -46,12 +47,6 @@ module.exports = function(app,User){
 
             res.json({result: 1});
         });
-    });
-
-    // CREATE ATTENDANCE
-    app.post('api/users/attend', function(req,res){
-    
-        
     });
 
 }
