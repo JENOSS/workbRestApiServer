@@ -11,7 +11,7 @@ let contractSchema = new Schema({
     month : String,
     day : String,
     wage : Number,
-    workday :  Number, //일주에 며칠?
+    workday :  Number,
     workHour :  Number,
     period :  Number
     
